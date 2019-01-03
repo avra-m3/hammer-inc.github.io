@@ -5,6 +5,8 @@
 layout: home
 ---
 
+# Welcome 
+
 I'm Avrami, I study, work and play in the field of computer science. 
 
 At the moment I'm focusing on building scalable, stable, and secure software platforms. 
