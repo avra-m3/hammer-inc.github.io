@@ -3,63 +3,19 @@ layout: project-home
 title: Projects
 permalink: /projects/
 ---
-<style>
-    .project-card {
-        display: inline-flex;
-        flex-direction: column;
-        width: 200px;
-        border: 1px solid black;
-        border-radius: 5px;
-        position: relative;
-        padding-bottom: 1em;
-		height: 100%;
-		margin-left: 1em;
-    }
-
-    .project-body {
-        padding: 5px;
-    }
-
-    a.overlay {
-        position: absolute;
-        display: table;
-        width: 200px;
-        opacity: 0;
-    }
-
-    .link-card {
-        position: absolute;
-        display: flex;
-        bottom: 5px;
-        width: 200px;
-        background: lightgrey;
-    }
-
-    .link-card > * {
-        margin: auto;
-        color: black;
-    }
-</style>
-<div>
+<div class="project-window centered">
     {% for project in site.projects %}
-    <span style="background: {{ project.color }}" class="project-card">
-		<a href={{ project.url }} class="overlay project-body">
-			<!--As the content is dynamic, copy it inside the anchor so it ends up the same height-->
-			<div class="project-body">
-			<div class="header">
-				<h1> {{ project.short }} </h1>
+    <span class="project-card">
+		<a class="fill" href={{ project.url }}>
+			<div class="card-body">
+				<div class="header">
+					<h1> {{ project.short }} </h1>
+				</div>
+				{{ project.excerpt }}
 			</div>
-			{{ project.excerpt }}
-		</div>
 		</a>
-		<div class="project-body">
-			<div class="header">
-				<h1> {{ project.short }} </h1>
-			</div>
-			{{ project.excerpt }}
-		</div>
 		{% if project.link %}
-		<a href="{{ project.link }}" class="link-card"> <span>View Live</span> </a>
+		<a href="{{ project.link }}" class="link-card"> <span>See Website</span> </a>
 		{% endif %}
 	</span>
     {% endfor %}
