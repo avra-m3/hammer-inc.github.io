@@ -1,0 +1,48 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+<style>
+.project-card {
+	display: inline-flex;
+	flex-direction: column;
+	width: 200px;
+	border: black 1px;
+	border-style: solid;
+	border-radius: 5px;
+	height: 300px;
+	white-space: no-wrap;
+	position: relative;
+}
+.project-body {
+	padding: 5px;
+}
+
+a.overlay{
+position: absolute;
+display: flex;
+width: 200px;
+height: 300px;
+}
+
+a.footer {
+	position: absolute;
+	display: flex;
+	bottom: 5px;
+	width: 200px;
+	height: 50px;
+}
+</style>
+{% for project in site.projects %}
+	<span class="project-card">
+		<a href={{ project.url }} class="overlay" />
+		<div class="project-body">
+			<div class="header">
+				<h1> {{ project.short }} </hi>
+			</div>
+			
+		</div>
+		<a href="{{project.link}}" class="footer"> Demo </a>
+	</span>
+{% endfor %}
