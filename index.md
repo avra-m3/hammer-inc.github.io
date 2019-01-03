@@ -5,7 +5,7 @@
 layout: home
 ---
 
-# Welcome 
+## Welcome
 
 I'm Avrami, I study, work and play in the field of computer science. 
 
