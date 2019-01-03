@@ -8,7 +8,7 @@ github: https://github.com/Hammer-Inc/incode
 skills: ['Javascript (React)', 'Python (Flask)', 'User Experience/Design (Material Design)', 'Education Design']
 tags: ['react', 'flask', 'web', 'material', 'design']
 ---
-Incode was borne out of a subject I took during my second semester at RMIT.
+Incode was born out of a subject I took during my second semester at RMIT.
 
 While researching a form of error correction, known as a 'Hamming Code', I was unable to find any sites which made the calculation of the error
 correction code easy to understand, thus 'Incode' was born.
