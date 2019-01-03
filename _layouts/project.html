@@ -1,0 +1,53 @@
+---
+layout: default
+title:  "Project Page"
+short: "?"
+color: none
+github:
+---
+<style>
+    .headline {
+        display:  flex;
+        margin-bottom: 15px;
+        border-bottom: 1px gray double;
+    }
+    .project-title {
+        display:  inline-flex;
+        margin: 0 auto 0 0;
+    }
+
+    .project-link {
+        display:  inline-flex;
+        margin-left: auto;
+    }
+    .project-link > * {
+        margin-bottom: .5em;
+        margin-top: auto;
+    }
+
+    .project-link > b {
+        padding-right: 1em;
+    }
+</style>
+<div class="headline">
+    <h1 class="project-title">{{ page.title }}</h1>
+    {% if page.link %}
+        <div class="project-link"><b>Website:</b><a href="{{ page.link }}">{{ page.link }}</a></div>
+    {% endif %}
+</div>
+{{ content }}
+
+{% if page.skills %}
+<b>This project involved learning the following</b>
+<p>
+<ul>
+    {% for skill in page.skills %}
+    <li>{{skill}}</li>
+    {% endfor %}
+</ul>
+</p>
+{% endif %}
+{% if page.github %}
+<br/>
+<div><i>View the <a href="{{ page.github }}">source code</a></i></div>
+{% endif %}
