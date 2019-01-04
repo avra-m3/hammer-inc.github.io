@@ -1,0 +1,61 @@
+---
+---
+
+.rss-subscribe {
+
+}
+
+.rss-subscribe > a {
+  text-decoration: none !important;
+  color: #445588;
+}
+
+.rss-subscribe > a:hover{
+  text-decoration: underline;
+  text-shadow: 2px 2px 2px #555555;
+}
+
+.post-list > li {
+  border-left: #555555 1px solid;
+  border-radius: 10px;
+  padding: 0 7px;
+  position: relative;
+}
+
+.post-list > li > h3 {
+  margin-bottom: 0;
+}
+
+.post-link {
+  color: #445588;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  color: #445588;
+  text-shadow: 0 0 1px #445588;
+}
+
+.badge {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  display: inline-block;
+  border: #555555 1px solid;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.pinned {
+  background-color: darkgreen;
+  color: white;
+  font-style: oblique;
+  right: 13px
+}
+
+.pinned:before {
+  content: "! ";
+  border-radius: 2em;
+  text-shadow: 0 0 3px lightgreen;
+}

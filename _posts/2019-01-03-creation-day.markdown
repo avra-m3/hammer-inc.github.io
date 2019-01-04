@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Creation Day"
-date:   2019-03-01 22:14:08 +1100
+date:   2019-01-03 22:14:08 +1100
 categories: update general
 ---
 Today this blog goes live, it's been a while in the making, a lot of procrastination has gone into this site behind the scenes and I'm glad it's finally working.

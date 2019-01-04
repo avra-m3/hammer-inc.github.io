@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Welcome to my Blog"
+date:   2019-01-02 21:00:00 +1100
+categories: update general
+pinned: true
+excerpt_separator: <!--more-->
+---
+
+Hello There,
+
+Welcome to my site/blog, I'm Avrami, I study, work and play in the field of computer science.
+<!--more-->
+At the moment I'm focusing on building scalable, stable, and secure software platforms. I have a few projects focused around this area that you can take a look at, just check out the 'Projects' tab 
