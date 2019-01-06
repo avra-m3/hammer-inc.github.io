@@ -9,12 +9,12 @@ layout: default
 
     {{ content }}
 
-    {% assign grouped_posts = paginator.posts | sort: "pinned", "last" %}
+    {% assign sorted_posts = paginator.posts | sort: "date" | sort: "pinned", "last" %}
 
     {%- if site.posts.size > 0 -%}
     <ul class="post-list">
 
-        {%- for post in grouped_posts -%}
+        {%- for post in sorted_posts -%}
         <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <h3>
