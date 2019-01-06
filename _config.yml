@@ -30,6 +30,8 @@ collections:
 # Build settings
 markdown: kramdown
 show_excerpts: true
+
+google_analytics: UA-131741134-1
 plugins:
   - jekyll-feed
 
