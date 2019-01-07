@@ -36,9 +36,9 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-sitemap
 
-#Legacy pagination
-#paginate_path: "/blog/page/:num/"
-#paginate: 2
+#Legacy pagination.... cause github
+paginate_path: "/blog/page/:num/"
+paginate: 2
 
 
 pagination:
@@ -48,6 +48,8 @@ pagination:
   sort_reverse: true
   category: 'posts'
   permalink: '/page/:num/'
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
