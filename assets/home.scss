@@ -59,3 +59,31 @@
   border-radius: 2em;
   text-shadow: 0 0 3px lightgreen;
 }
+
+.paginate-box {
+  display: inline-flex;
+  padding: 0 5px;
+  text-decoration: none;
+  color: black ;
+  border-radius: 10px;
+}
+
+.paginate-box:hover {
+  cursor: pointer;
+  background-color: ghostwhite;
+  text-decoration: none;
+}
+
+.inactive-page {
+  color: #ddd;
+  cursor: not-allowed !important;
+}
+
+.inactive-page:hover {
+  background-color: inherit;
+}
+
+.active-page{
+  color: #ddd;
+  background-color: ghostwhite;
+}
