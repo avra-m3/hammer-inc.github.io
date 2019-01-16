@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title:  "Self Hosted Cloud Version Control"
 link: https://git.avrami.me
 short: "Git Server"

@@ -1,12 +1,13 @@
 ---
 layout: default
-title: About
+title: Whoami
 permalink: /about/
+order: 3
 ---
 
 About Me
 --------
-I'm Avrami, a Computer Science student currently studying at RMIT university. 
+I'm Avrami, a Computer Science student currently studying at RMIT university.
 My hobbies include playing video games and building things when I see a need for them.
 
 I have 2 years experience working in the industry at the technology services department of RMIT.

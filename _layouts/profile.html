@@ -1,0 +1,31 @@
+---
+layout: base
+---
+{%- include headline.html -%}
+<div class="wrapper">
+    <div class="profile">
+        <div class="sidebar">
+
+            <h4>
+                Connect with me
+            </h4>
+            {%- include social.badges.html -%}
+            <h4>
+                What I know
+            </h4>
+            {%- include skills.html -%}
+
+            <h4>
+                Want to get to know me?
+            </h4>
+
+            <div>
+                For references, <span class="mail-hidden">coffee requests, and spam email,</span> shoot me an email at <a href="mailto:{{site.email}}" >{{site.email}}</a>
+            </div>
+
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{% assign size = view | size %}
+{% assign max = max_records | default: site.max_records | default: 2 %}
+
+{% if view and size > 0 %}
+<div class="quickview">
+    {% if title %}
+    <h2 class="title">{{title}}</h2>
+    {% endif %}
+    {% for page in view limit:max %}
+    {% if page.hidden != true %}
+    <div class="item" onclick="window.location = '{{page.url}}'">
+        <h3 class="title">{{page.title}}</h3>
+        {% if page.where %}
+        <span class="where">{{ page.where }}</span>
+        {% endif %}
+        {% if page.when %}
+        <span class="when">{{ page.when }}</span>
+        {% endif %}
+        <div class="about">{{page.excerpt}}</div>
+
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% if size > max %}
+    <a href="{{permalink}}" class="more">
+        View More...
+    </a>
+    {%endif %}
+</div>
+{% endif %}

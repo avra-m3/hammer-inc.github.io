@@ -1,0 +1,18 @@
+<div class="headline">
+    <div class="wrapper">
+        <div class="avatar">
+            <div>
+            {%- if site.avatar_url -%}
+                <img src="{{site.avatar_url}}" alt="Profile Picture"/>
+            {%- else -%}
+                <div class="text">
+                    {{site.author}}
+                </div>
+            {%- endif -%}
+            </div>
+        </div>
+        {%- if site.portfolio .headline -%}
+        <div class="tagline">{{ site.portfolio.headline }}</div>
+        {%- endif -%}
+    </div>
+</div>

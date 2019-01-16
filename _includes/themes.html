@@ -1,0 +1,26 @@
+<script>
+    var styles = {
+        dark: "/assets/dark.css",
+        light: "/assets/light.css"
+    };
+    function switchTheme() {
+        var stylesheet = document.getElementById("stylesheet");
+        var mode = stylesheet.classList[0];
+        var next, cls;
+        switch (mode){
+            case "dark":
+                next = styles.light;
+                cls = "light";
+                break;
+            case "light":
+            default:
+                next = styles.dark;
+                cls = "dark"
+        }
+        stylesheet.setAttribute("href", next);
+        stylesheet.classList.remove(mode);
+        stylesheet.classList.add(cls)
+    }
+</script>
+
+<button class="page-link" style="display: none" onclick="switchTheme()">Change Theme</button>

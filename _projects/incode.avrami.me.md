@@ -7,6 +7,8 @@ color: blue
 github: https://github.com/Hammer-Inc/incode
 skills: ['Javascript (React)', 'Python (Flask)', 'User Experience/Design (Material Design)', 'Education Design']
 tags: ['react', 'flask', 'web', 'material', 'design']
+
+where: Personal Project
 ---
 Incode is an education-centric project born out of a subject I took during my second semester at RMIT.
 
