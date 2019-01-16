@@ -34,3 +34,8 @@ skills:
     confidence: 90
   - name: Web Development
     confidence: 100
+
+google_analytics: UA-131741134-1
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
