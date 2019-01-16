@@ -127,6 +127,8 @@ GEM
     jekyll-optional-front-matter (0.3.0)
       jekyll (~> 3.0)
     jekyll-paginate (1.1.0)
+    jekyll-paginate-v2 (2.1.0)
+      jekyll (~> 3.0)
     jekyll-readme-index (0.2.0)
       jekyll (~> 3.0)
     jekyll-redirect-from (0.14.0)
@@ -239,7 +241,6 @@ GEM
     tzinfo-data (1.2018.9)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.4.1)
-    wdm (0.1.1)
 
 PLATFORMS
   x64-mingw32
@@ -247,9 +248,10 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.6)
+  jekyll-paginate-v2
+  jekyll-sitemap
   minima (~> 2.0)
   tzinfo-data
-  wdm (~> 0.1.0)
 
 BUNDLED WITH
    1.17.3
