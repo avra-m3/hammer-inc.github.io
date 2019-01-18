@@ -202,6 +202,7 @@
   > .item {
     margin-bottom: 15px;
     padding: 1px 10px;
+    display: block;
 
     @media print {
       margin-bottom: 5px;
@@ -241,6 +242,7 @@
       -moz-border-radius: 10px;
       border-radius: 10px;
       background-color: $background-highlight;
+      text-decoration: none;
     }
   }
 }

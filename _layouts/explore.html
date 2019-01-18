@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign collection = site.collections | where: "label", page.collection | first%}
+<div class="collection">
+    <h1 class="title">{{ collection.title }}</h1>
+    {% for page in collection.docs %}
+    <a class="item" href="{{page.url | remove: '.html'}}">
+        <h3 class="title">{{page.title}}</h3>
+        {% assign tag_size = page.tags | size %}
+        {% if page.tags and tag_size> 0 %}
+        Tags:
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+        {% endif %}
+        <div class="about">{{page.excerpt}}</div>
+
+    </a>
+    {% endfor %}
+</div>

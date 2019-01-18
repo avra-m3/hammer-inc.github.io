@@ -3,7 +3,7 @@
     <div class="wrapper">
 
 
-        {%- assign default_paths = site.pages | sort: "order" | map: "path" -%}
+        {%- assign default_paths = site.pages | where: "display", "true" | sort: "order" | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
 
         {%- if page_paths -%}
