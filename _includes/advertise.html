@@ -3,7 +3,7 @@
 {% for collection in ordered_collections %}
 
 {% assign max = collection.max_records | default: site.max_records | default: 2 %}
-{% assign view = collection.docs | reb %}
+{% assign view = collection.docs | reverse %}
 {% assign size = view | size %}
 
 {% if view and size > 0 %}
