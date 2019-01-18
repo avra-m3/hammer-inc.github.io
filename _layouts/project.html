@@ -42,7 +42,7 @@ github:
 <p>
 <ul>
     {% for skill in page.skills %}
-    <li>{{skill}}</li>
+    <li>{{skill | capitalize}}</li>
     {% endfor %}
 </ul>
 </p>
