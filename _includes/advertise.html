@@ -1,0 +1,37 @@
+
+{% assign ordered_collections = site.collections | where: "advertise", "true" | sort: "order" %}
+
+{% for collection in ordered_collections %}
+
+{% assign max = collection.max_records | default: site.max_records | default: 2 %}
+{% assign view = collection.docs | reverse %}
+{% assign size = view | size %}
+
+{% if view and size > 0 %}
+
+<div class="collection">
+    <h2 class="title">
+        {{ collection.title | default: collection.label | capitalize }}
+    </h2>
+    {% for page in view limit:max %}
+    <div class="item" onclick="window.location = '{{page.url}}'">
+        <h3 class="title">{{page.title}}</h3>
+        {% if page.tags %}
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+        {% endif %}
+        <div class="about">{{page.excerpt}}</div>
+
+    </div>
+    {% endfor %}
+    {% if size > max %}
+    <a href="/{{collection.label}}" class="more print-hidden">
+        View More...
+    </a>
+    {%endif %}
+</div>
+
+
+{% endif %}
+{% endfor %}

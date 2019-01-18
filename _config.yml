@@ -8,11 +8,31 @@ google_analytics: UA-131741134-1
 
 collections:
   projects:
+    title: Projects
+
     output: true
+    advertise: true
+    order: 4
+
   work:
     output: true
-  volunteer:
+    advertise: true
+    order: 1
+
+    title: Work Experience
+
+  volunteering:
     output: true
+    advertise: true
+    order: 3
+
+    title: Volunteer Experience
+  education:
+    output: true
+    advertise: true
+    order: 2
+
+    title: Education
 
 
 paginate: 5
@@ -21,7 +41,7 @@ github_username:  Hammer-Inc
 linkedin_username: avrami-hammer
 
 portfolio:
-  headline: Extremely Competent Software Engineer, specializing in deploying reliable Web Apps at Scale
+  headline: Skilled Software Engineer, specializing in deploying reliable Web Apps at Scale
 
 skills:
   - name: Python
@@ -34,8 +54,12 @@ skills:
     confidence: 90
   - name: Web Development
     confidence: 100
+  - name: Machine Learning
+    confidence: 50
 
 google_analytics: UA-131741134-1
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+show_excerpts: true

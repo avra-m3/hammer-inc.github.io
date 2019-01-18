@@ -277,7 +277,10 @@
   display: flex;
   flex-flow: row-reverse;
   width: 100%;
-  >.sidebar {
+  @include media-query($on-palm) {
+    flex-flow: column;
+  }
+    >.sidebar {
     float: right;
     display: inline-flex;
     flex-flow: column;
