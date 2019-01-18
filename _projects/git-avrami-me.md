@@ -1,10 +1,11 @@
 ---
 layout: project
-title:  "Self Hosted Cloud Version Control"
+title:  "Gitea Cloud Version Control"
 link: https://git.avrami.me
 short: "Git Server"
 color: green
 skills: ['SSH / Linux Bash', 'Containers/Virtualization (Docker)']
+tags: ['docker', 'web hosting']
 ---
 I realised the other day how reliant I was on Github private repositories as a long term store for my university assignments.
 

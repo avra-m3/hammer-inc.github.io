@@ -1,10 +1,10 @@
 ---
 layout: project
-title:  "Self Hosted eMail Server"
+title:  "Mailcow Cloud Mail Server"
 link: https://mail.avrami.me
 short: "Mail Server"
-color: red
 skills: ['SSH / Linux Bash', 'Containers/Virtualization (Docker)', 'SMTP/IMAP Protocols']
+tags: ['email', 'docker', 'web hosting']
 ---
 Recently I realised I had little to no understanding of how email services and protocols worked.
 

@@ -1,12 +1,12 @@
 ---
 layout: project
-title:  "Incode - Hamming Sim"
+title:  "Incode Interactive Education"
 link: https://incode.avrami.me
 short: "Incode"
 color: blue
 github: https://github.com/Hammer-Inc/incode
 skills: ['Javascript (React)', 'Python (Flask)', 'User Experience/Design (Material Design)', 'Education Design']
-tags: ['react', 'flask', 'web', 'material', 'design']
+tags: ['react', 'flask', 'web', 'material design']
 
 where: Personal Project
 ---
