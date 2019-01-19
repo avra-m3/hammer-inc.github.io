@@ -28,6 +28,12 @@ body {
   flex-direction: column;
 }
 
+.transition {
+  -webkit-transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  transition: all 1000ms linear;
+}
 
 
 /**
@@ -103,11 +109,16 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: $link-color;
   text-decoration: none;
 
+  -webkit-transition: color 1000ms linear;
+  -moz-transition: color 1000ms linear;
+  -o-transition: color 1000ms linear;
+  transition: color 1000ms linear;
+
   &:visited {
-    color: darken($brand-color, 15%);
+    color: darken($link-color, 15%);
   }
 
   &:hover {
@@ -129,8 +140,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $brand-color;
+  border-left: 4px solid $brand-color-light;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -149,7 +160,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 1px solid $brand-color-light;
   border-radius: 3px;
   background-color: #eef;
 }
@@ -212,7 +223,7 @@ pre {
     width: 16px;
     height: 16px;
     display: inline-block;
-    fill: #{$grey-color};
+    fill: #{$brand-color};
     padding-right: 5px;
     vertical-align: text-top;
   &.inline {
@@ -237,21 +248,21 @@ table {
   text-align: $table-text-align;
   color: lighten($text-color, 18%);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
+  border: 1px solid $brand-color-light;
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background-color: lighten($brand-color-light, 6%);
     }
   }
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background-color: lighten($brand-color-light, 3%);
+    border: 1px solid darken($brand-color-light, 4%);
+    border-bottom-color: darken($brand-color-light, 12%);
   }
   td {
-    border: 1px solid $grey-color-light;
+    border: 1px solid $brand-color-light;
   }
 }

@@ -2,13 +2,14 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-$text-color:       #111 !default;
-$background-color: #fdfdfd !default;
-$background-highlight: darken($background-color, 5);
-$brand-color:      #2a7ae2 !default;
+$text-color:       #222 !default;
+$link-color: lighten($text-color, 20%);
 
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$background-color: #fdfdfd !default;
+$background-highlight: darken($background-color, 10%);
+
+$brand-color:      #4784b7 !default;
+//$brand-color-light: lighten($brand-color, 20%);
+//$brand-color-light: darken($brand-color, 40%);
 
 @import "main";

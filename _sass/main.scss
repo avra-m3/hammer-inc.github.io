@@ -10,18 +10,23 @@ $base-line-height: 1.5 !default;
 
 $spacing-unit: 30px !default;
 
-$text-color: #fff !default;
+/* Theme Colouring */
+
+$text-color: #ddd !default;
+$link-color: darken($text-color, 20%) !default;
+
 $background-color: #222 !default;
-$background-highlight: lighten($background-color, 5) !default;
-$background-highlight-subtle: lighten($background-color, 2) !default;
+$background-highlight: lighten($background-color, 20%) !default;
 
 $brand-color: #2a7ae2 !default;
-$brand-color-dark: darken($brand-color, 25%) !default;
-$brand-color-light: lighten($brand-color, 40%) !default;
+$brand-color-dark: darken($brand-color, 20%) !default;
+$brand-color-light: lighten($brand-color, 20%) !default;
 
-$grey-color: #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
+//$grey-color: #828282 !default;
+//$grey-color-light: lighten($grey-color, 40%) !default;
+//$grey-color-dark: darken($grey-color, 25%) !default;
+
+
 
 $table-text-align: left !default;
 
@@ -54,4 +59,5 @@ $on-laptop: 800px !default;
 "styles/layout",
 "styles/syntax-highlighting",
 "styles/extra",
+"styles/dark",
 "styles/print";

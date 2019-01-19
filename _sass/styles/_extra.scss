@@ -168,7 +168,7 @@
 
 .progress-bar {
   width: 100%;
-  background-color: darken($brand-color, 50);
+  //background-color: $brand-color-dark;
   padding: 3px 2px;
   border-radius: 2px;
 
@@ -216,10 +216,10 @@
       padding: 2px 10px;
       border-radius: 5px;
       text-transform: uppercase;
-      background-color: $background-highlight;
+      background-color: $brand-color-light;
 
       @media print {
-        background-color: $grey-color;
+        background-color: $brand-color;
       }
 
       margin-bottom: 20px;
@@ -234,7 +234,7 @@
       }
     }
     > .about {
-      color: $brand-color-dark;
+      color: $brand-color;
     }
     &:hover {
       cursor: pointer;
@@ -245,4 +245,9 @@
       text-decoration: none;
     }
   }
+}
+
+.theme-trigger {
+  position: absolute;
+  right: 20px;
 }

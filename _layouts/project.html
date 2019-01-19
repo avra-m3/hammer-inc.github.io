@@ -2,7 +2,6 @@
 layout: default
 title:  "Project Page"
 short: "?"
-color: none
 github:
 ---
 <style>
@@ -37,8 +36,10 @@ github:
 </div>
 {{ content }}
 
+{% assign collection = site.collections | where: "label", page.collection | first %}
+
 {% if page.skills %}
-<b>This project involved learning the following</b>
+<b>As part of my {{ collection.title | downcase }} I gained the following skills;</b>
 <p>
 <ul>
     {% for skill in page.skills %}

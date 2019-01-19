@@ -1,0 +1,35 @@
+$text-color: #fff;
+$background-color: #222;
+$background-highlight: lighten($background-color, 10%);
+$link-color: lighten($text-color, 10%);
+
+body.dark {
+  background-color: $background-color;
+  color: $text-color;
+  a {
+    color: $link-color;
+
+    &:visited {
+      color: darken($link-color, 15%);
+    }
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+  .site-nav {
+    .page-link {
+      color: $text-color;
+      &:hover {
+        background: $background-highlight;
+      }
+    }
+  }
+
+  .collection {
+    >.item:hover {
+      background-color: $background-highlight;
+    }
+
+  }
+}

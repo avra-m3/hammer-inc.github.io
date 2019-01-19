@@ -1,5 +1,3 @@
-
-
 <div class="skill-meter">
     {%- for skill in site.skills -%}
     <div class="skill">
@@ -11,34 +9,15 @@
 </div>
 
 <script>
-    // function populateSkills() {
-    //     var elems = document.getElementsByClassName("progress-bar");
-    //     for(var i =0; i< elems.length; i++){
-    //         var elem = elems[i];
-    //         var progress = elem.getAttribute("data-progress");
-    //         elem.innerHTML = "<div>" + progress + "</div>";
-    //     }
-    //
-    //     function setAnimations(){
-    //         for(var i =0; i< elems.length; i++){
-    //             var elem = elems[i];
-    //             var sub = elem.getElementsByTagName("div")[0];
-    //             var progress = elem.getAttribute("data-progress");
-    //             sub.setAttribute("style", "width:" + progress + "%")
-    //
-    //         }
-    //     }
-    //     setTimeout(setAnimations, 1000)
-    // }
-    // document.addEventListener("DOMContentLoaded", populateSkills, false)
 
-    var animateHTML = function() {
+    var animateHTML = function () {
         var elems;
         var windowHeight;
+
         function init() {
-            elems = document.querySelectorAll('.progress-bar');
+            elems = document.querySelectorAll('.progress-bar:not(.loaded)');
             windowHeight = window.innerHeight;
-            for(var i =0; i< elems.length; i++){
+            for (var i = 0; i < elems.length; i++) {
                 var elem = elems[i];
                 var progress = elem.getAttribute("data-progress");
                 elem.innerHTML = "<div>" + progress + "</div>";
@@ -47,21 +26,24 @@
             checkPosition();
 
         }
+
         function addEventHandlers() {
             window.addEventListener('scroll', checkPosition);
-            // window.addEventListener('resize', init);
+            window.addEventListener('resize', init);
         }
+
         function checkPosition() {
             for (var i = 0; i < elems.length; i++) {
                 var positionFromTop = elems[i].getBoundingClientRect().top;
                 if (positionFromTop - windowHeight <= 0) {
                     var sub = elems[i].getElementsByTagName("div")[0];
                     var progress = elems[i].getAttribute("data-progress");
-
+                    elems[i].classList.add("loaded");
                     sub.setAttribute("style", "width:" + progress + "%")
                 }
             }
         }
+
         return {
             init: init
         };

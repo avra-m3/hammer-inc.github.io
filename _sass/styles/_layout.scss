@@ -2,8 +2,8 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  //border-top: 5px solid $grey-color-dark;
+  border-bottom: 1px solid $brand-color-dark;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -41,14 +41,13 @@
     line-height: $base-line-height * $base-font-size * 2.25;
     text-align: center;
     padding: 0 10px;
+    display: inline-flex;
+
+    transition: none !important;
 
     &:hover {
       text-decoration: none;
       background: $background-highlight;
-      //background: $grey-color-light;
-    }
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
     }
   }
 
@@ -66,7 +65,7 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $brand-color-dark;
   padding: $spacing-unit 0;
 }
 
@@ -83,7 +82,7 @@
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
-  color: $grey-color;
+  color: $brand-color;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
   display: flex;
@@ -145,7 +144,7 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: 0 0 $spacing-unit 0;
   flex: 1;
 }
 
@@ -168,7 +167,7 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $brand-color;
 }
 
 .post-link {
@@ -245,23 +244,24 @@
     * {
       border-radius: 50%;
       padding: 40% 10px 40% 10px;
-      border: 2px solid $grey-color-dark;
-      background-color: $background-highlight-subtle;
+      border: 2px solid $brand-color-dark;
+      background-color: $brand-color-light;
     }
   }
 
 }
 
 .headline {
-  background-color: $background-highlight;
+  background-color: $brand-color-light;
   padding: 20px;
-  border-radius: 10px;
   margin-bottom: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
   .tagline {
     margin-top: 20px;
     text-align: center;
-    color: $grey-color;
+    color: $text-color;
     font-style: italic;
 
     @include relative-font-size(1.125);
@@ -284,21 +284,21 @@
     float: right;
     display: inline-flex;
     flex-flow: column;
-    border-left: 2px solid $background-highlight;
+    border-left: 2px solid $brand-color-light;
     width: 35%;
     padding-left: 10px;
 
     @include media-query($on-palm){
       width: 100%;
       border-left: 0;
-      border-bottom: 5px solid $background-highlight;
+      border-bottom: 5px solid $brand-color-light;
       padding-left: 0;
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
 
     > h4 {
-      border-bottom: 1px solid $grey-color;
+      border-bottom: 1px solid $brand-color-light;
       &:not(:first-child){
         margin-top: 30px;
       }

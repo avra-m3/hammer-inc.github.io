@@ -1,26 +1,53 @@
 <script>
-    var styles = {
-        dark: "/assets/dark.css",
-        light: "/assets/light.css"
-    };
-    function switchTheme() {
-        var stylesheet = document.getElementById("stylesheet");
-        var mode = stylesheet.classList[0];
-        var next, cls;
-        switch (mode){
-            case "dark":
-                next = styles.light;
-                cls = "light";
-                break;
-            case "light":
-            default:
-                next = styles.dark;
-                cls = "dark"
+    function theme() {
+        var body;
+        function toggle() {
+            var body = document.getElementsByTagName("body")[0];
+            var toggle = document.getElementById("theme");
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+                if (toggle) {
+                    toggle.innerText = "Light"
+                }
+            } else {
+                body.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+                if (toggle) {
+                    toggle.innerText = "Night"
+                }
+            }
+
         }
-        stylesheet.setAttribute("href", next);
-        stylesheet.classList.remove(mode);
-        stylesheet.classList.add(cls)
+
+
+        function rememberTheme() {
+            if (localStorage.getItem("theme") === "dark") {
+                var toggle = document.getElementById("theme");
+                toggle.innerText = "Night"
+            }
+        }
+
+        function addTransitions() {
+            body.classList.add("transition");
+        }
+
+        function init() {
+            body = document.getElementsByTagName("body")[0];
+            if (localStorage.getItem("theme") === "dark") {
+                toggle();
+            }
+            window.addEventListener("load", addTransitions);
+            window.addEventListener("DOMContentLoaded", rememberTheme)
+        }
+
+        return {
+            'init': init,
+            'toggle': toggle
+        }
     }
+    theme().init()
+
 </script>
 
-<button class="page-link" style="display: none" onclick="switchTheme()">Change Theme</button>
+<a id="theme" href="#" class="page-link theme-trigger" onclick="theme().toggle()">Light</a>
