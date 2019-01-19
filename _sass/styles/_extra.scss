@@ -213,20 +213,21 @@
     > .tag {
       font-style: italic;
       color: $brand-color;
-      padding: 2px 10px;
+      padding: 0 10px;
       border-radius: 5px;
       text-transform: uppercase;
       background-color: $brand-color-light;
+      display: inline-block;
 
       @media print {
         background-color: $brand-color;
       }
 
-      margin-bottom: 20px;
-      @include relative-font-size(1.0);
+      margin-bottom: 10px;
+      @include relative-font-size(0.9);
 
       @include media-query($on-laptop) {
-        @include relative-font-size(.9);
+        @include relative-font-size(0.8);
       }
 
       &:not(:last-of-type):after {

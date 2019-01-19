@@ -4,36 +4,43 @@ title: Blog
 permalink: /blog/
 order: 3
 display: true
+
+collection: posts
 ---
 <div class="home">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
 
-    {% assign sorted_posts = paginator.posts | default: site.posts | sort: "date" | sort: "pinned", "last" %}
+    {% assign sorted_posts = paginator.posts | default: site.posts | sort: "date" | reverse %}
 
     {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
+    <div class="collection">
 
-        {%- for post in sorted_posts -%}
-        <li>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                </a>
-            </h3>
-            {% if post.pinned %}
-            <span class="badge pinned">Pinned</span>
+        {%- for page in sorted_posts -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <!--<h3>-->
+        <!--<a class="post-link" href="{{ post.url | relative_url }}">-->
+        <!--{{ post.title | escape }}-->
+        <!--</a>-->
+        <!--</h3>-->
+
+        <!--<span class="post-meta">{{"A"}}</span>-->
+        <!--{%- if site.show_excerpts -%}-->
+        <!--{{ post.excerpt }} <a href="{{ post.url | relative_url }}">Read More</a>-->
+        <!--{%- endif -%}-->
+
+        <a class="item" style="position: relative" href="{{page.url | remove: '.html'}}">
+            <h3 class="title">{{page.title}}</h3>
+            {% if page.pinned %}
+            <span class="badge pinned">Important</span>
             {% endif %}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }} <a href="{{ post.url | relative_url }}">Read More</a>
-            {%- endif -%}
+            <span class="tag">{{  page.date | date: date_format  }}</span>
+            <div class="about">{{page.excerpt}}</div>
 
-        </li>
+        </a>
         {%- endfor -%}
-    </ul>
+    </div>
 
     {% if paginator.total_pages > 1 %}
     <div class="pagination">
@@ -71,10 +78,10 @@ display: true
 
     <p class="rss-subscribe">Subscribe
         <a href="{{ "/feed.xml" | relative_url }}">
-            via RSS
-            <svg class="svg-icon inline">
-                <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-            </svg>
+        via RSS
+        <svg class="svg-icon inline">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+        </svg>
         </a>
     </p>
     {%- endif -%}

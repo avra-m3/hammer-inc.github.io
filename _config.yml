@@ -7,6 +7,9 @@ description: Avrami's Blog, Baked using love, jekyll, and github.
 google_analytics: UA-131741134-1
 
 collections:
+  posts:
+    title: Blog
+
   projects:
     title: Projects
 
