@@ -252,3 +252,16 @@
   position: absolute;
   right: 20px;
 }
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  fill: #4784b7;
+  padding-right: 5px;
+  vertical-align: text-top;
+
+  #use-icon:hover {
+    fill: $background-color;
+  }
+}

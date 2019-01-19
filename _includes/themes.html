@@ -1,20 +1,26 @@
 <script>
     function theme() {
         var body;
+        var themeIcons = {
+            'dark': "/assets/minima-social-icons.svg#moon",
+            'light': "/assets/minima-social-icons.svg#sun"
+        };
+
+
         function toggle() {
             var body = document.getElementsByTagName("body")[0];
-            var toggle = document.getElementById("theme");
+            var toggle = document.getElementById("use-icon");
             if (body.classList.contains("dark")) {
                 body.classList.remove("dark");
                 localStorage.setItem("theme", "light");
                 if (toggle) {
-                    toggle.innerText = "Light"
+                    toggle.setAttribute('xlink:href', themeIcons.dark)
                 }
             } else {
                 body.classList.add("dark");
                 localStorage.setItem("theme", "dark");
                 if (toggle) {
-                    toggle.innerText = "Night"
+                    toggle.setAttribute('xlink:href', themeIcons.light)
                 }
             }
 
@@ -23,8 +29,8 @@
 
         function rememberTheme() {
             if (localStorage.getItem("theme") === "dark") {
-                var toggle = document.getElementById("theme");
-                toggle.innerText = "Night"
+                var toggle = document.getElementById("use-icon");
+                toggle.setAttribute('xlink:href', themeIcons.light)
             }
         }
 
@@ -50,4 +56,4 @@
 
 </script>
 
-<a id="theme" href="#" class="page-link theme-trigger" onclick="theme().toggle()">Light</a>
+<a href="#" class="theme-trigger" onclick="theme().toggle()"><svg class="theme-icon"><use id="use-icon" xlink:href="/assets/minima-social-icons.svg#moon"></use></svg></a>
