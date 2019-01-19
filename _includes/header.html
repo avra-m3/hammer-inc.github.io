@@ -17,9 +17,7 @@
                 <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
                 {%- endif -%}
                 {%- endfor -%}
-                {%- if jekyll.environment != 'production' %}
                 {% include themes.html %}
-                {% endif %}
             </div>
         </nav>
         {%- endif -%}
