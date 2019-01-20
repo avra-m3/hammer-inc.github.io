@@ -248,19 +248,68 @@
   }
 }
 
-.theme-trigger {
-  position: absolute;
-  right: 20px;
-}
-
-.theme-icon {
+.theme-toggle {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
   width: 24px;
   height: 24px;
-  display: inline-block;
-  fill: #4784b7;
-  vertical-align: text-top;
 
-  #use-icon:hover {
-    fill: $background-color;
+  .theme-icon {
+    width: 24px;
+    height: 24px;
+    fill: #4784b7;
+    vertical-align: text-top;
+
+    transition: opacity 1s ease-in, visibility 1s ease-in, left 1s linear, top 1s linear;
+
+
+    display: inline-flex;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    #use-icon:hover {
+      fill: $background-color;
+    }
+  }
+}
+
+.buffer {
+  display: inline-flex;
+  flex-shrink: 1;
+  flex-grow: 10;
+}
+
+body.light {
+  .theme-toggle {
+    #light-icon {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+      left: 0;
+    }
+
+    #dark-icon {
+      top: 24px;
+      left: 24px;
+    }
+  }
+}
+
+body.dark {
+  #dark-icon {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+  }
+
+  #light-icon {
+    top: 24px;
+    left: -24px;
   }
 }

@@ -1,50 +1,54 @@
 <script>
     function theme() {
-        var body;
-        var themeIcons = {
-            'dark': "/assets/minima-social-icons.svg#moon",
-            'light': "/assets/minima-social-icons.svg#sun"
-        };
-
+        var themes = [
+            "light", "dark"
+        ];
 
         function toggle() {
             var body = document.getElementsByTagName("body")[0];
-            var toggle = document.getElementById("use-icon");
-            if (body.classList.contains("dark")) {
-                body.classList.remove("dark");
-                localStorage.setItem("theme", "light");
-                if (toggle) {
-                    toggle.setAttribute('xlink:href', themeIcons.dark)
-                }
-            } else {
-                body.classList.add("dark");
-                localStorage.setItem("theme", "dark");
-                if (toggle) {
-                    toggle.setAttribute('xlink:href', themeIcons.light)
-                }
+            var state = getState();
+
+            var next = themes.indexOf(state) + 1;
+            if (next >= themes.length) {
+                next = 0;
             }
 
+            setState(themes[next]);
         }
 
+        function getState() {
+            var state = localStorage.getItem("theme");
+            if (!themes.includes(state)) {
+                setState("light");
+                state = "light"
+            }
+
+            return state
+        }
+
+        function setState(state) {
+            var body = document.getElementsByTagName("body")[0];
+            localStorage.setItem("theme", state);
+            for (var i in themes) {
+                if (body.classList.contains(themes[i])) {
+                    body.classList.remove(themes[i])
+                }
+            }
+            body.classList.add(state);
+        }
 
         function rememberTheme() {
-            if (localStorage.getItem("theme") === "dark") {
-                var toggle = document.getElementById("use-icon");
-                toggle.setAttribute('xlink:href', themeIcons.light)
-            }
+            setState(getState());
         }
 
         function addTransitions() {
+            var body = document.getElementsByTagName("body")[0];
             body.classList.add("transition");
         }
 
         function init() {
-            body = document.getElementsByTagName("body")[0];
-            if (localStorage.getItem("theme") === "dark") {
-                toggle();
-            }
+            rememberTheme();
             window.addEventListener("load", addTransitions);
-            window.addEventListener("DOMContentLoaded", rememberTheme)
         }
 
         return {
@@ -52,8 +56,16 @@
             'toggle': toggle
         }
     }
+
     theme().init()
 
 </script>
 
-<a href="#" class="theme-trigger" onclick="theme().toggle()"><svg class="theme-icon"><use id="use-icon" xlink:href="/assets/minima-social-icons.svg#moon"></use></svg></a>
+<div class="theme-toggle" onclick="theme().toggle()">
+    <svg id="light-icon" class="theme-icon">
+        <use xlink:href="/assets/minima-social-icons.svg#sun"></use>
+    </svg>
+    <svg id="dark-icon" class="theme-icon">
+        <use xlink:href="/assets/minima-social-icons.svg#moon"></use>
+    </svg>
+</div>
