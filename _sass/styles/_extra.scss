@@ -282,6 +282,10 @@
   display: inline-flex;
   flex-shrink: 1;
   flex-grow: 10;
+
+  @include media-query($on-palm){
+    display: none;
+  }
 }
 
 body.light {
