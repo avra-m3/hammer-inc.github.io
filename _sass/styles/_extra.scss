@@ -191,9 +191,6 @@
   margin-right: 20px;
   &:not(:last-child) {
     margin-bottom: 20px;
-    @media print {
-      margin-bottom: 10px;
-    }
   }
 
   > .title {
@@ -263,7 +260,6 @@
     vertical-align: text-top;
 
     transition: opacity 1s ease-in, visibility 1s ease-in, left 1s linear, top 1s linear;
-
 
     display: inline-flex;
     visibility: hidden;

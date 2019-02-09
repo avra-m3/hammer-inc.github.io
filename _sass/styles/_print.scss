@@ -1,17 +1,35 @@
 @media print {
-    body{
-        background-color: $background-color;
+  body {
+    background-color: $background-color;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
+    margin-bottom: 3px;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: black !important;
+  }
+
+  .collection {
+    page-break-after: always;
+    &:not(:last-child) {
+      margin-bottom: 5px !important;
     }
 
-    * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        color: black !important;
+    > .item {
+      margin-bottom: 5px !important;
+      > .tag {
+        margin-bottom: 0px !important;
+      }
     }
 
-    .print-hidden {
-        display: none;
-    }
+  }
 
+  .print-hidden {
+    display: none;
+  }
 
 }
