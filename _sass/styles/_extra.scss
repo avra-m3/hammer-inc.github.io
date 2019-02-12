@@ -144,25 +144,29 @@
 
 // Social Media Badges
 
-.social-media-badges > span {
-  display: inline-block;
-  border-radius: 4px;
-  padding: 0 4px;
-  background-color: lighten($brand-color, 10);
-  border: 1px solid $brand-color;
-
-  *, *:hover {
+.social-media-badges {
+  margin-right: 10px;
+  *:hover , *:hover {
     text-decoration: none;
-    color: darken($brand-color, 20);
+    background-color: darken($brand-color, 20);
   }
+  > span {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0 4px;
+    background-color: lighten($brand-color, 10);
+    border: 1px solid $brand-color;
+    width: 100%;
 
-  .svg-icon {
-    vertical-align: baseline;
-  }
+    .svg-icon {
+      vertical-align: baseline;
+      fill: black;
+    }
 
-  &:not(:last-child) {
-    margin-right: 10px;
-    margin-bottom: 10px;
+    &:not(:last-child) {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -279,7 +283,7 @@
   flex-shrink: 1;
   flex-grow: 10;
 
-  @include media-query($on-palm){
+  @include media-query($on-palm) {
     display: none;
   }
 }
