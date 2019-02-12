@@ -1,0 +1,55 @@
+---
+layout: profile
+title: Edit and Print my resume
+permalink: /resume/editable
+display: false
+---
+
+<link rel="stylesheet" href="{{ '/assets/editable.css' | relative_url }}">
+{% include editable.js %}
+
+
+{% assign ordered_collections = site.collections | where: "advertise", "true" | sort: "order" %}
+
+<div onclick="resume().reset()" id="reset" class="side-button print-hidden"><small>Reset Changes</small></div>
+{% for collection in ordered_collections %}
+
+{% assign view = collection.docs | reverse %}
+{% assign size = view | size %}
+
+{% if view and size > 0 %}
+
+<div class="collection"
+     id="{{collection.title}}"
+     ondragover="resume().dragCollection.test(event,this)"
+     ondrop="resume().dragCollection.drop(event, this)"
+     data-title="{{collection.title}}"
+>
+    <h2 class="title">
+        {{ collection.title | default: collection.label | capitalize }}
+    </h2>
+    {% for page in view %}
+    <div class="item" onclick="resume().toggleVisibility(this)"
+         id="{{page.title}}_{{collection.title}}_{{forloop.index}}"
+         draggable="true"
+         data-collection="{{collection.title}}"
+         ondragstart="resume().drag.begin(event)"
+         ondragover="resume().drag.test(event, this)"
+         ondrop="resume().drag.drop(event, this)"
+         style="order:{{forloop.index}}"
+    >
+        <h3 class="title">{{page.title}}</h3>
+        {% if page.tags %}
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+        {% endif %}
+        <div class="about">{{page.excerpt}}</div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endif %}
+{% endfor %}
