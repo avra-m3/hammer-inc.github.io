@@ -4,7 +4,7 @@ title:  "Summer Vacationer, Deloitte Platform Engineering"
 date:  2019-01-14
 short: "Deloitte Intern 2019"
 skills: ['communication', 'time management', 'optical character recognition (OCR)', 'natural language processing (NLP)', 'python', 'performance testing']
-tags: ['Deloitte', 'January 2019 - Current']
+tags: ['Deloitte', 'January - February 2019']
 ---
 As an vacationer with the Platform Engineering team at deloitte I developed a working solution 
 to a problem in the process automation space for the client I was assigned to.
