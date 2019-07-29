@@ -2,7 +2,7 @@
 layout: project
 title:  "Summer Vacationer, Deloitte Platform Engineering"
 date:  2019-01-14
-short: "Deloite 2019"
+short: "Deloitte Intern 2019"
 skills: ['communication', 'time management', 'optical character recognition (OCR)', 'natural language processing (NLP)', 'python', 'performance testing']
 tags: ['Deloitte', 'January 2019 - Current']
 ---

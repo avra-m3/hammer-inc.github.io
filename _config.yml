@@ -58,7 +58,9 @@ skills:
   - name: Web Development
     confidence: 90
   - name: Machine Learning
-    confidence: 60
+    confidence: 80
+  - name: Natural Language
+    confidence: 70
 
 google_analytics: UA-131741134-1
 plugins:
